@@ -11,4 +11,5 @@ patent.style.height = "100%";
 patent.style.margin = "0";
 patent.src = url;
 win.document.body.appendChild(patent);
+iframe.focus();
 win.opener.close();
