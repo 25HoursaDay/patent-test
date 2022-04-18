@@ -1,5 +1,14 @@
-var bruh = document.createElement("patent");
-
 var lower = 10000000;
 var upper = 99999999;
-location.replace('https://patentcenter.uspto.gov/#!/applications/'+(Math.floor(Math.random()*(upper-lower))+lower));
+var url = 'https://patentcenter.uspto.gov/#!/applications/'+(Math.floor(Math.random()*(upper-lower))+lower);
+var win = window.open("https://patentcenter.uspto.gov/#!/");
+win.document.body.style.margin = "0";
+win.document.body.style.height = "100vh";
+var patent = win.document.createElement("iframe");
+patent.style.border = "none";
+patent.style.width = "100%";
+patent.style.height = "100%";
+patent.style.margin = "0";
+patent.src = url;
+win.document.body.appendChild(patent);
+win.opener.close();
